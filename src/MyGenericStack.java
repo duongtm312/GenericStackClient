@@ -44,6 +44,7 @@ public class MyGenericStack<T> {
         }
         System.out.println("\n1.3. Size of stack after pop operations : " + stack.size());
     }
+
     static void stackOfIntegers() {
         MyGenericStack<Integer> stack = new MyGenericStack();
         stack.push(5);
@@ -57,5 +58,15 @@ public class MyGenericStack<T> {
             System.out.printf(" %d", stack.pop());
         }
         System.out.println("\n3.3 Size of stack after pop operations : " + stack.size());
+    }
+
+    public void reverse() {
+        T temp;
+        LinkedList<T> stackClone = null;
+        for (int i = 0; i < stack.size(); i++) {
+            temp = stack.pop();
+            stackClone.push(temp);
+        }
+        stack = stackClone;
     }
 }
